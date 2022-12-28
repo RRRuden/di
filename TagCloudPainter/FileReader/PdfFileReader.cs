@@ -17,7 +17,7 @@ public class PdfFileReader : IFileReader
                 sb.Append(text);
             }
 
-            return sb.ToString().Replace(" ", "").Split('\n').Where(x => x != "").ToList();
+            return sb.ToString().Replace(" ", "").Split('\n').Where(x=>!string.IsNullOrWhiteSpace(x)).ToList();
         }
     }
 }
